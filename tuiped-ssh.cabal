@@ -1,0 +1,85 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.38.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           tuiped-ssh
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/bronen/tuiped-ssh#readme>
+homepage:       https://github.com/bronen/tuiped-ssh#readme
+bug-reports:    https://github.com/bronen/tuiped-ssh/issues
+author:         Brenno Rodrigues
+maintainer:     contact@bronen.com.br
+copyright:      2025 Brenno Rodrigues
+license:        BSD-3-Clause
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.org
+
+source-repository head
+  type: git
+  location: https://github.com/bronen/tuiped-ssh
+
+library
+  other-modules:
+      Paths_tuiped_ssh
+  autogen-modules:
+      Paths_tuiped_ssh
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      base >=4.7 && <5
+    , bytestring ==0.12.1.0
+    , data-default ==0.8.0.1
+    , hssh ==0.1.0.0
+    , memory ==0.18.0
+    , socket ==0.8.3.0
+    , vty ==6.4
+    , vty-unix ==0.2.0.0
+  default-language: Haskell2010
+
+executable tuiped-ssh-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_tuiped_ssh
+  autogen-modules:
+      Paths_tuiped_ssh
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring ==0.12.1.0
+    , data-default ==0.8.0.1
+    , hssh ==0.1.0.0
+    , memory ==0.18.0
+    , socket ==0.8.3.0
+    , tuiped-ssh
+    , vty ==6.4
+    , vty-unix ==0.2.0.0
+  default-language: Haskell2010
+
+test-suite tuiped-ssh-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_tuiped_ssh
+  autogen-modules:
+      Paths_tuiped_ssh
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring ==0.12.1.0
+    , data-default ==0.8.0.1
+    , hssh ==0.1.0.0
+    , memory ==0.18.0
+    , socket ==0.8.3.0
+    , tuiped-ssh
+    , vty ==6.4
+    , vty-unix ==0.2.0.0
+  default-language: Haskell2010
