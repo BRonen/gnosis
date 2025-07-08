@@ -12,26 +12,12 @@ packages:
   original:
     hackage: hssh-0.1.0.0@sha256:edcb0366d7d9b890e0e1a1d424ad7213315d5cdce889516fb8f27ec9a1a8ae4c,2969
 - completed:
-    hackage: brick-2.9@sha256:467ed9ab7c2420aebe3458f3834a815018eeaa792301052dc32643c259938afd,18377
-    pantry-tree:
-      sha256: eb807b7ec8bee4124bfafba56455904e9afde51ae51e56bd1ab4bb5e84e9b0ee
-      size: 4944
-  original:
-    hackage: brick-2.9@sha256:467ed9ab7c2420aebe3458f3834a815018eeaa792301052dc32643c259938afd,18377
-- completed:
     hackage: data-default-0.8.0.1@sha256:536ff91641a39b8ad302eebceff767d86ec6b543b44b1db9104650a2b1bc63bd,1110
     pantry-tree:
       sha256: d9e57565e157da76676ac080eddf8d9ceaadf54039749eef1736073fd0f3842c
       size: 382
   original:
     hackage: data-default-0.8.0.1@sha256:536ff91641a39b8ad302eebceff767d86ec6b543b44b1db9104650a2b1bc63bd,1110
-- completed:
-    hackage: vty-6.4@sha256:c9af372bb98c02072bfec25eba566ce37f46f886a2dc46d735547f5c9e56f264,3426
-    pantry-tree:
-      sha256: 34956d89a0f545ebe40e45954160000dbabb8a384efb89d3f8cc21a358638a2e
-      size: 2104
-  original:
-    hackage: vty-6.4@sha256:c9af372bb98c02072bfec25eba566ce37f46f886a2dc46d735547f5c9e56f264,3426
 - completed:
     hackage: socket-0.8.3.0@sha256:c7c8433770729eef056445b15ceb0e77807ec3b0bea4e47a2f4c609bbeab2638,3414
     pantry-tree:

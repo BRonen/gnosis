@@ -1,6 +1,6 @@
-name:                tuiped-ssh
+name:                gnosis
 version:             0.1.0.0
-github:              "bronen/tuiped-ssh"
+github:              "bronen/gnosis"
 license:             BSD-3-Clause
 author:              "Brenno Rodrigues"
 maintainer:          "contact@bronen.com.br"
@@ -16,18 +16,18 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/bronen/tuiped-ssh#readme>
+description:         Please see the README on GitHub at <https://github.com/bronen/gnosis#readme>
 
 dependencies:
 - base >= 4.7 && < 5
 - data-default == 0.8.0.1
 - hssh == 0.1.0.0
 - socket == 0.8.3.0
-- vty == 6.4
-- vty-unix == 0.2.0.0
 - memory == 0.18.0
 - bytestring == 0.12.1.0
-
+- ansi-terminal == 1.1.2
+- unix == 2.8.6.0
+- io-streams == 1.5.2.2
 ghc-options:
 - -Wall
 - -Wcompat
@@ -51,7 +51,7 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - tuiped-ssh
+    - gnosis
 
 tests:
   tuiped-ssh-test:
@@ -62,4 +62,4 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - tuiped-ssh
+    - gnosis

@@ -1,1 +1,8 @@
-# tuiped-ssh
+* Gnosis
+
+This project aims to replace the old and outdated HTTP by doing a web app that runs on a TUI and can be accessed through SSH.
+
+#+BEGIN_QUOTE
+Gnosis is the light that banishes the darkness of ignorance.
+  --- Luva de pedreiro
+#+END_QUOTE
