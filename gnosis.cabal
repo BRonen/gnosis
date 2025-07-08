@@ -31,6 +31,10 @@ library
       Paths_gnosis
   hs-source-dirs:
       src
+  default-extensions:
+      FlexibleContexts
+      FlexibleInstances
+      OverloadedStrings
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       ansi-terminal ==1.1.2

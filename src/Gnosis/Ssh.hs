@@ -1,6 +1,3 @@
-{-# LANGUAGE FlexibleContexts  #-}
-{-# LANGUAGE FlexibleInstances #-}
-{-# LANGUAGE OverloadedStrings #-}
 module Gnosis.Ssh where
 
 import           Control.Concurrent ( forkFinally, forkIO )
@@ -32,8 +29,6 @@ import qualified System.Socket.Unsafe           as S
 import           Network.SSH
 import qualified Network.SSH.Server   as Server
 import qualified Network.SSH.Internal as SSHInternal
--- import qualified Graphics.Vty               as Vty
--- import           Graphics.Vty.Platform.Unix (mkVty)
 
 instance DuplexStream (S.Socket f S.Stream p) where
 
@@ -83,14 +78,6 @@ handleDirectTcpIpRequest _idnt req = pure $ Just $ Server.DirectTcpIpHandler $ \
     sendAll stream bs
     print bs
 
--- runVtyApp :: String -> Handle -> Handle -> IO ()
--- runVtyApp term hin hout = do
---   cfg <- mkVty Vty.defaultConfig
---   let pic = Vty.picForImage $ Vty.string Vty.defAttr "Hello from TUI over SSH!"
---   Vty.update cfg pic
---   _ <- Vty.nextEvent cfg
---   Vty.shutdown cfg
-
 appLoop :: AppState -> Handle -> IO (ExitCode)
 appLoop appState h = do
   c <- hGetChar h
@@ -112,8 +99,7 @@ handleSessionRequest _idnt _req =
   pure $ Just $ Server.SessionHandler $
     \_env mterm _mcmd sin sout _stderr -> do
       let appState = getAppState mterm
-      sendAll sout "Hello world!\n"
-      hIn  <- sshToIOSInput sin 4096
+      hIn  <- sshToIOSInput sin 4
       hOut <- sshToIOSOutput sout
       h <- streamPairToHandle hIn hOut
       hClearScreen h

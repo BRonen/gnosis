@@ -41,6 +41,10 @@ ghc-options:
 
 library:
   source-dirs: src
+  default-extensions:
+    - FlexibleContexts
+    - FlexibleInstances
+    - OverloadedStrings
 
 executables:
   tuiped-ssh-exe:
