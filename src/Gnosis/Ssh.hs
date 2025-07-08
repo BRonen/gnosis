@@ -56,10 +56,10 @@ data AppState = AppState { width  :: Int
                          , height :: Int }
 
 clear :: AppState -> BS.ByteString
-clear appState = BS.replicate n $ (fromIntegral (fromEnum '=') :: Word8)
-  where n = (width appState) * (height appState)
+clear appState = BS.replicate n (fromIntegral (fromEnum '=') :: Word8)
+  where n = width appState * height appState
 
-getAppState :: Maybe (SSHInternal.TermInfo) -> AppState
+getAppState :: Maybe SSHInternal.TermInfo -> AppState
 getAppState (Just (SSHInternal.TermInfo pty)) =
   AppState { width  = fromEnum $ SSHInternal.ptyWidthCols pty
            , height = fromEnum $ SSHInternal.ptyHeightRows pty }
@@ -78,7 +78,7 @@ handleDirectTcpIpRequest _idnt req = pure $ Just $ Server.DirectTcpIpHandler $ \
     sendAll stream bs
     print bs
 
-appLoop :: AppState -> Handle -> IO (ExitCode)
+appLoop :: AppState -> Handle -> IO ExitCode
 appLoop appState h = do
   c <- hGetChar h
   hSetCursorPosition h 4 5
@@ -112,10 +112,9 @@ handleSessionRequest _idnt _req =
 
 sshToIOSOutput :: OutputStream sshOut => sshOut -> IO (Streams.OutputStream BS.ByteString)
 sshToIOSOutput sshOut =
-  Streams.makeOutputStream $ \mBs ->
-    case mBs of
-      Just bs -> void $ sendAll sshOut bs
-      Nothing -> pure ()
+  Streams.makeOutputStream $ \case
+    Just bs -> void $ sendAll sshOut bs
+    Nothing -> pure ()
 
 sshToIOSInput :: InputStream sshIn => sshIn -> Int -> IO (Streams.InputStream BS.ByteString)
 sshToIOSInput sshIn chunkSize =

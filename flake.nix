@@ -10,7 +10,7 @@
       in {
         defaultPackage = pkgs.mkShell {
           name = "lispoggers";
-          buildInputs = with pkgs; [ stack ghc zlib ];
+          buildInputs = with pkgs; [ stack ghc hlint zlib ];
 
           shellHook = "stack --version && ghc --version";
         };

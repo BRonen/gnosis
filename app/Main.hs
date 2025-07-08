@@ -46,14 +46,13 @@ loop = do
 
 enableRawMode :: IO TerminalAttributes
 enableRawMode = do
-  fd <- return stdInput
-  old <- getTerminalAttributes fd
+  old <- getTerminalAttributes stdInput
   let raw = foldl withoutMode old
         [ EnableEcho
         , ProcessInput
         , KeyboardInterrupts
         , StartStopOutput ]
-  setTerminalAttributes fd raw Immediately
+  setTerminalAttributes stdInput raw Immediately
   return old
 
 restoreMode :: TerminalAttributes -> IO ()
