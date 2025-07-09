@@ -48,7 +48,7 @@ library:
     - OverloadedStrings
 
 executables:
-  tuiped-ssh-exe:
+  gnosis-exe:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -59,7 +59,7 @@ executables:
     - gnosis
 
 tests:
-  tuiped-ssh-test:
+  gnosis-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
