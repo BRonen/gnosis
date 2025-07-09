@@ -25,6 +25,7 @@ source-repository head
 library
   exposed-modules:
       Gnosis.Ssh
+      Gnosis.Tui
   other-modules:
       Paths_gnosis
   autogen-modules:
